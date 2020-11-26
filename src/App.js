@@ -17,7 +17,6 @@ class App extends Component {
 
   reset = () => {
     this.setState({current: '0', previous: [], nextIsReset: false});
-    console.log(this.state);
   }
 
   addToCurrent = (symbol) => {
@@ -26,10 +25,10 @@ class App extends Component {
       let {previous} = this.state;
       previous.push(this.state.current + symbol);
       this.setState({previous, nextIsReset: true});
-    }else{
+    } else{
       if((this.state.current === "0" && symbol !== ".") || this.state.nextIsReset){
         this.setState({current: symbol, nextIsReset: false})
-      }else{
+      } else{
         this.setState({current: this.state.current + symbol})
       }
     
